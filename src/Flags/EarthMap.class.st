@@ -2,7 +2,7 @@
 How to use:
 
 EarthMap new
-importCountriesFrom: 'pharo-local/iceberg/leoDefossez/C3P_projects/usefull/world.svg'   asFileReference;
+importCountriesFrom: 'pharo-local/iceberg/LeoDefossez/C3P_projects/ressources/world.svg'   asFileReference;
 openPopulatedCanvas;
 yourself
 "
