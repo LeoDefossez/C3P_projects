@@ -17,6 +17,11 @@ Class {
 }
 
 { #category : 'initialization' }
+EarthMap >> countries [
+	^ countries
+]
+
+{ #category : 'initialization' }
 EarthMap >> importCountriesFrom: aFileReference [
 
 	(XMLDOMParser parse: aFileReference readStream contents) document nodes

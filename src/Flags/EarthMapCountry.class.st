@@ -38,6 +38,11 @@ EarthMapCountry >> inspectorShape: aBuilder [
 ]
 
 { #category : 'instance creation' }
+EarthMapCountry >> name [
+	^ name
+]
+
+{ #category : 'instance creation' }
 EarthMapCountry >> printOn: aStream [
 
 	super printOn: aStream.
