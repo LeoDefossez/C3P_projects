@@ -23,3 +23,23 @@ EarthMapCountry >> fromXML: aXMLElement [
 	name := aXMLElement attributeAt: 'title'.
 	code := aXMLElement attributeAt: 'id'
 ]
+
+{ #category : 'instance creation' }
+EarthMapCountry >> inspectorShape: aBuilder [
+
+	<inspectorPresentationOrder: 0 title: 'Shape'>
+	| canvas |
+	canvas := RSCanvas new.
+	canvas add: self asRSShape.
+	canvas @ RSCanvasController.
+	^ SpRoassalInspectorPresenter new
+		  canvas: canvas;
+		  yourself
+]
+
+{ #category : 'instance creation' }
+EarthMapCountry >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPutAll: ' ' , name
+]
