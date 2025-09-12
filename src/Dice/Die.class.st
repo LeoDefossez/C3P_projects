@@ -8,6 +8,14 @@ Class {
 	#package : 'Dice'
 }
 
+{ #category : 'as yet unclassified' }
+Die class >> withFaces: anInteger [
+
+	^ self new
+		  faces: anInteger;
+		  yourself
+]
+
 { #category : 'initialization' }
 Die >> faces [
 
@@ -36,5 +44,5 @@ Die >> printOn: aStream [
 { #category : 'initialization' }
 Die >> roll [
 
-	^ Random new nextIntegerBetween: 1 and: faces
+	^ faces atRandom
 ]
