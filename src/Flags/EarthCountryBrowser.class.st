@@ -10,6 +10,12 @@ Class {
 	#package : 'Flags'
 }
 
+{ #category : 'as yet unclassified' }
+EarthCountryBrowser >> connectPresenters [
+
+	countryList whenSelectedItemChangedDo: [ :item | self onCountrySelected: item ]
+]
+
 { #category : 'layout' }
 EarthCountryBrowser >> defaultLayout [
 
@@ -20,6 +26,18 @@ EarthCountryBrowser >> defaultLayout [
 		  height: self class toolbarHeight;
 		  add: countryFlag height: 350;
 		  yourself
+]
+
+{ #category : 'as yet unclassified' }
+EarthCountryBrowser >> flagForCountryCode: astring [
+
+	| request pngArray |
+	request := ZnClient new.
+	request get: 'https://flagcdn.com/w320/' , astring asLowercase , '.png'.
+	request isSuccess ifTrue: [
+			pngArray := request response contents.
+			^ ImageReadWriter formFromStream: (ReadStream on: pngArray) ].
+	^ BorderedMorph new asForm
 ]
 
 { #category : 'initialization' }
@@ -36,4 +54,12 @@ EarthCountryBrowser >> initializePresenters [
 --
 '.
 	countryFlag := self newImage
+]
+
+{ #category : 'as yet unclassified' }
+EarthCountryBrowser >> onCountrySelected: countryItem [
+
+	countryCode text: '
+' , countryItem code.
+	self showFlag: countryItem code
 ]
