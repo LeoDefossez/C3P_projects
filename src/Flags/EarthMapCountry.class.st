@@ -17,6 +17,11 @@ EarthMapCountry >> asRSShape [
 ]
 
 { #category : 'instance creation' }
+EarthMapCountry >> code [
+	^ code
+]
+
+{ #category : 'instance creation' }
 EarthMapCountry >> fromXML: aXMLElement [
 
 	svgPath := aXMLElement attributeAt: 'd'.

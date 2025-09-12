@@ -1,3 +1,10 @@
+"
+Entry point:
+
+(EarthCountryBrowser on:
+(EarthMap new importCountriesFrom: 'pharo-local/iceberg/LeoDefossez/C3P_projects/ressources/world.svg'   asFileReference))
+open
+"
 Class {
 	#name : 'EarthCountryBrowser',
 	#superclass : 'SpPresenterWithModel',
@@ -59,7 +66,7 @@ EarthCountryBrowser >> initializePresenters [
 { #category : 'as yet unclassified' }
 EarthCountryBrowser >> onCountrySelected: countryItem [
 
-	countryCode text: '
-' , countryItem code.
-	self showFlag: countryItem code
+	countryCode text: ' ' , countryItem code.
+	
+	countryFlag image: (self flagForCountryCode: countryItem code)
 ]
