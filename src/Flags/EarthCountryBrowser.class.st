@@ -11,11 +11,25 @@ Class {
 	#instVars : [
 		'countryList',
 		'countryCode',
-		'countryFlag'
+		'countryFlag',
+		'countrySvg'
 	],
 	#category : 'Flags',
 	#package : 'Flags'
 }
+
+{ #category : 'as yet unclassified' }
+EarthCountryBrowser >> canvaForSvg: aSvgPath [
+
+	| c svg |
+	c := RSCanvas new.
+	svg := RSSVGPath new
+		       color: Color blue;
+		       svgPath: aSvgPath.
+	c add: svg.
+	c @ RSCanvasController.
+	^ c
+]
 
 { #category : 'as yet unclassified' }
 EarthCountryBrowser >> connectPresenters [
@@ -32,6 +46,7 @@ EarthCountryBrowser >> defaultLayout [
 				   add: countryCode width: 40)
 		  height: self class toolbarHeight;
 		  add: countryFlag height: 350;
+		  add: countrySvg height: 350;
 		  yourself
 ]
 
@@ -60,13 +75,15 @@ EarthCountryBrowser >> initializePresenters [
 	countryCode text: '
 --
 '.
-	countryFlag := self newImage
+	countryFlag := self newImage.
+	countrySvg := self newRoassal
 ]
 
 { #category : 'as yet unclassified' }
 EarthCountryBrowser >> onCountrySelected: countryItem [
 
 	countryCode text: ' ' , countryItem code.
-	
-	countryFlag image: (self flagForCountryCode: countryItem code)
+
+	countryFlag image: (self flagForCountryCode: countryItem code).
+	countrySvg canvas: (self canvaForSvg: countryItem svgPath). 1halt.
 ]

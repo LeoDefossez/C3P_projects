@@ -53,3 +53,8 @@ EarthMapCountry >> printOn: aStream [
 	super printOn: aStream.
 	aStream nextPutAll: ' ' , name
 ]
+
+{ #category : 'instance creation' }
+EarthMapCountry >> svgPath [
+	^ svgPath
+]
