@@ -85,5 +85,5 @@ EarthCountryBrowser >> onCountrySelected: countryItem [
 	countryCode text: ' ' , countryItem code.
 
 	countryFlag image: (self flagForCountryCode: countryItem code).
-	countrySvg canvas: (self canvaForSvg: countryItem svgPath). 1halt.
+	countrySvg canvas: (self canvaForSvg: countryItem svgPath)
 ]
