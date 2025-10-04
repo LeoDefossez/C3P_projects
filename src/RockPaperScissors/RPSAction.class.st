@@ -10,6 +10,9 @@ Rock new vs: Scissors new >> #Rock
 Class {
 	#name : 'RPSAction',
 	#superclass : 'Object',
+	#instVars : [
+		'resultHandler'
+	],
 	#category : 'RockPaperScissors',
 	#package : 'RockPaperScissors'
 }
@@ -22,23 +25,29 @@ RPSAction >> draw [
 { #category : 'as yet unclassified' }
 RPSAction >> vs: aRPSAction [ 
 	
-	self subclassResponsibility 
+	^ self vs: aRPSAction withResultHandler: RPSSymbolResultHandler new
 ]
 
 { #category : 'as yet unclassified' }
-RPSAction >> vsPaper: aPaper [ 
+RPSAction >> vs: aRPSAction withResultHandler: aRPSResultHandler [
 	
 	self subclassResponsibility 
 ]
 
 { #category : 'as yet unclassified' }
-RPSAction >> vsRock: aRock [
+RPSAction >> vsPaper: aPaper withResultHandler: aRPSResultHandler [
 	
 	self subclassResponsibility 
 ]
 
 { #category : 'as yet unclassified' }
-RPSAction >> vsScissors: aScissors [
+RPSAction >> vsRock: aRock withResultHandler: aRPSResultHandler [
+	
+	self subclassResponsibility 
+]
+
+{ #category : 'as yet unclassified' }
+RPSAction >> vsScissors: aScissors withResultHandler: aRPSResultHandler [
 
 	self subclassResponsibility
 ]

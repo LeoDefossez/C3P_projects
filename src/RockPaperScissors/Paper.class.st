@@ -6,25 +6,25 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
-Paper >> vs: aRPSAction [
+Paper >> vs: aRPSAction withResultHandler: aRPSResultHandler [
 	
-	^ aRPSAction vsPaper: self
+	^ aRPSAction vsPaper: self withResultHandler: aRPSResultHandler
 ]
 
 { #category : 'as yet unclassified' }
-Paper >> vsPaper: aPaper [
+Paper >> vsPaper: aPaper withResultHandler: aRPSResultHandler [
 
-	^ self draw
+	^ aRPSResultHandler draw
 ]
 
 { #category : 'as yet unclassified' }
-Paper >> vsRock: aRock [
+Paper >> vsRock: aRock withResultHandler: aRPSResultHandler [
 	
-	^ self win
+	^ aRPSResultHandler paperWin: self
 ]
 
 { #category : 'as yet unclassified' }
-Paper >> vsScissors: aScissors [
+Paper >> vsScissors: aScissors withResultHandler: aRPSResultHandler [
 
-	^ aScissors win
+	^ aRPSResultHandler scissorsWin: aScissors
 ]
