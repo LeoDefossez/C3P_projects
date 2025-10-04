@@ -1,6 +1,6 @@
 Class {
 	#name : 'Die',
-	#superclass : 'Object',
+	#superclass : 'DiceElement',
 	#instVars : [
 		'faces'
 	],
@@ -14,6 +14,12 @@ Die class >> withFaces: anInteger [
 	^ self new
 		  faces: anInteger;
 		  yourself
+]
+
+{ #category : 'initialization' }
+Die >> + aDiceElement [
+
+	^ aDiceElement plusDie: self
 ]
 
 { #category : 'initialization' }
@@ -32,6 +38,21 @@ Die >> faces: anInteger [
 Die >> initialize [
 	
 	faces := 6
+]
+
+{ #category : 'arithmetic' }
+Die >> plusDie: aDie [
+
+	^ DieHandle new
+		  addDie: self;
+		  addDie: aDie;
+		  yourself
+]
+
+{ #category : 'arithmetic' }
+Die >> plusDieHandle: aDieHandle [ 
+	
+		^ aDieHandle addDie: self; yourself 
 ]
 
 { #category : 'printing' }

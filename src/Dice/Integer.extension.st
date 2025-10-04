@@ -1,7 +1,7 @@
 Extension { #name : 'Integer' }
 
 { #category : '*Dice' }
-Integer >> D: anInteger [
+Integer >> d: anInteger [
 
 	| handle |
 	handle := DieHandle new.

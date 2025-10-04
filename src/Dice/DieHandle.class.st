@@ -1,8 +1,7 @@
 Class {
 	#name : 'DieHandle',
-	#superclass : 'Object',
+	#superclass : 'DiceElement',
 	#instVars : [
-		'faces',
 		'dices'
 	],
 	#category : 'Dice',
@@ -10,8 +9,9 @@ Class {
 }
 
 { #category : 'adding' }
-DieHandle >> + aDieHandle [ 
-	dices addAll: (aDieHandle dices)
+DieHandle >> + aDiceElement [
+	
+	^ aDiceElement plusDieHandle: self
 ]
 
 { #category : 'adding' }
@@ -41,6 +41,19 @@ DieHandle >> initialize [
 DieHandle >> maxRoll [
 
 	^ (dices collect: [ :die | die faces ]) sum
+]
+
+{ #category : 'adding' }
+DieHandle >> plusDie: aDie [ 
+	
+	^ self
+		  addDie: aDie;
+		  yourself
+]
+
+{ #category : 'arithmetic' }
+DieHandle >> plusDieHandle: aDieHandle [
+	aDieHandle dices do:[:die | self addDie: die]
 ]
 
 { #category : 'adding' }

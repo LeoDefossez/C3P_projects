@@ -26,3 +26,9 @@ DieTest >> testRoll [
 	die := Die new.
 	10 timesRepeat: [ self assert: (die roll between: 1 and: 6) ]
 ]
+
+{ #category : 'tests' }
+DieTest >> testSumTwoDices [
+
+	self assert: (Die new + Die new) class equals: DieHandle
+]

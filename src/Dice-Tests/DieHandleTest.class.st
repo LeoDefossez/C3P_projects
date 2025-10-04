@@ -45,7 +45,19 @@ DieHandleTest >> testRoll [
 { #category : 'tests' }
 DieHandleTest >> testSimpleHandle [
 
-	self assert: (2 D: 20) diceNumber equals: 2
+	self assert: (2 d: 20) diceNumber equals: 2
+]
+
+{ #category : 'tests' }
+DieHandleTest >> testSumDieAndDieHandle [
+
+	self assert: (Die new + (1 d: 20)) diceNumber equals: 2
+]
+
+{ #category : 'tests' }
+DieHandleTest >> testSumDieHandleAndDie [
+
+	self assert: ((1 d: 20) + (Die new)) diceNumber equals: 2
 ]
 
 { #category : 'tests' }
