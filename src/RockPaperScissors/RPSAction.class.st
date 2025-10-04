@@ -1,3 +1,12 @@
+"
+I am an abstract classes for every action in the rock paper scissors game
+
+my entry point is the method vs:
+
+exemple:
+
+Rock new vs: Scissors new >> #Rock
+"
 Class {
 	#name : 'RPSAction',
 	#superclass : 'Object',
