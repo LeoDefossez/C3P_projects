@@ -1,6 +1,6 @@
 # C3P_Projects
 
-C3P*Projects is a repository used during a course named C3P, meaning \_Conception et Paradigmes de Programmation par la Pratique* (Design and Programming Paradigms through Practice).  
+C3P_Projects is a repository used during a course named C3P, meaning *Conception et Paradigmes de Programmation par la Pratique* (Design and Programming Paradigms through Practice).  
 This project holds multiple small exercises done throughout the course.
 
 ## Loading the project
