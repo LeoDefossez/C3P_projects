@@ -52,9 +52,3 @@ FSEntry >> path [
 
 	^ parent ifNil: [ ^ name ] ifNotNil: [ parent path , '/' , name ]
 ]
-
-{ #category : 'as yet unclassified' }
-FSEntry >> searchByName: aString [
-
-	self subclassResponsibility
-]

@@ -33,13 +33,3 @@ FSDirectory >> initialize [
 	super initialize.
 	children := OrderedCollection new
 ]
-
-{ #category : 'as yet unclassified' }
-FSDirectory >> searchByName: aString [
-
-	| res |
-	res := OrderedCollection new.
-	self name = aString ifTrue: [ res add: self ].
-	children do: [ :each | res addAll: (each searchByName: aString) ].
-	^ res
-]

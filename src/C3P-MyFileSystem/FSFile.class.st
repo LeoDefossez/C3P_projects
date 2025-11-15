@@ -30,11 +30,3 @@ FSFile >> contentsMatch: aString [
 
 	^ self contents beginsWith: aString
 ]
-
-{ #category : 'as yet unclassified' }
-FSFile >> searchByName: aString [
-
-	^ self name = aString
-		  ifTrue: [ { self } ]
-		  ifFalse: [ {  } ]
-]
