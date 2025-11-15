@@ -1,6 +1,6 @@
 Class {
 	#name : 'BaselineOfC3PProject',
-	#superclass : 'Object',
+	#superclass : 'BaselineOf',
 	#category : 'BaselineOfC3PProject',
 	#package : 'BaselineOfC3PProject'
 }
