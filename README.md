@@ -97,7 +97,7 @@ This exercise requires the implementation of `FSDirectory` as the composite.
 For the second part of the exercise, we need to allow searching for files or directories either by name or by contents.  
 A simple and scalable solution is to implement a visitor on `FSEntry` objects.  
 Here the how it is done :  
-<img src="ressources/FSVisitor.png" alt="img" width="50%">
+<img src="ressources/FSVisitor.png" alt="img">
 
 The last part of the exercise requires adding new leaf types to the composite and additional visitors to show that this design is modular.  
 (This has been done, but there’s no real need to go deeper into the details here.)
